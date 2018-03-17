@@ -1,2 +1,5 @@
 # JS-training-03
-js training
+
+Section: 4 Task List [part 1] - UI & Add Task Items
+
+Course lectures on branches...
