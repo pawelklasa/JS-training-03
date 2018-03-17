@@ -40,5 +40,6 @@ function addTask(e) {
     // Clear input
     taskInput.value = '';
 
+    
     e.preventDefault();
 }
