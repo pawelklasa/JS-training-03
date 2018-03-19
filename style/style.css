@@ -1,0 +1,22 @@
+body {
+  background: #eae7dc;  /* fallback for old browsers */
+  color: #e85a4f;
+}
+
+.container {
+  max-width: 600px;
+}
+
+.card {
+  background: #eae7dc;  /* fallback for old browsers */
+ 
+}
+
+a {
+    color: #e85a4f;
+}
+
+.footer {
+  color: #fff;
+  float: right;
+}
