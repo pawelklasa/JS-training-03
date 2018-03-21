@@ -127,3 +127,16 @@
 // 2. Create event listeners wrap it in a function call it
 
 // 3. Create functions for all event listeners 
+
+const form = document.querySelector('.submit-btn');
+
+runEvents();
+
+function runEvents() {
+  form.addEventListener('click', addItem);
+}
+
+
+function addItem() {
+  console.log('clicked!');
+}
