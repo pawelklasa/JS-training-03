@@ -132,17 +132,20 @@ const form = document.querySelector('.submit-btn');
 const task = document.querySelector('#task');
 const listOfTasks = document.querySelector('.collection');
 
+// Events
+
 runEvents();
 
 function runEvents() {
   form.addEventListener('click', addItem);
+  listOfTasks.addEventListener('click', removeItem);
 }
 
+// Functions
 
 function addItem(e) {
   if (task.value === '') {
     alert('PLease add task');
-    
   }
   
   const li = document.createElement('li');
@@ -153,7 +156,24 @@ function addItem(e) {
 
   listOfTasks.appendChild(li);
 
+  const closeBtn = document.createElement('a');
+
+  closeBtn.className = 'delete-item secondary-content';
+
+  closeBtn.innerHTML = '<i class="fa fa-times-circle" aria-hidden="true"></i>';
+
+  li.appendChild(closeBtn);
+
   e.preventDefault();
   task.value = '';
   console.log(li);
+}
+
+function removeItem(e) {
+  if(e.target.parentElement.classList.contains('delete-item')) {
+        if(confirm('Are you sure?')) {
+          e.target.parentElement.parentElement.remove();
+        }
+      }
+  console.log('removed');
 }
