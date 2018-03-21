@@ -1,5 +1,6 @@
 body {
-  background: linear-gradient(270deg, #ee5959, #a73737);
+font-family: 'Open Sans', sans-serif;
+background: linear-gradient(270deg, #ee5959, #a73737);
 background-size: 400% 400%;
 
 -webkit-animation: AnimationName 30s ease infinite;
@@ -23,6 +24,8 @@ _
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
+  
 }
 
 .title {
