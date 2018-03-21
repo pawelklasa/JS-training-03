@@ -128,7 +128,9 @@
 
 // 3. Create functions for all event listeners 
 
-const form = document.querySelector('.submit-btn');
+const form = document.querySelector('.submit-btn'); 
+const task = document.querySelector('#task');
+const listOfTasks = document.querySelector('.collection');
 
 runEvents();
 
@@ -137,6 +139,21 @@ function runEvents() {
 }
 
 
-function addItem() {
-  console.log('clicked!');
+function addItem(e) {
+  if (task.value === '') {
+    alert('PLease add task');
+    
+  }
+  
+  const li = document.createElement('li');
+
+  li.className = 'collection-item';
+  
+  li.appendChild(document.createTextNode(task.value));
+
+  listOfTasks.appendChild(li);
+
+  e.preventDefault();
+  task.value = '';
+  console.log(li);
 }
