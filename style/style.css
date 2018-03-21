@@ -26,6 +26,16 @@ body {
 
 .title {
   color: #24212e;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+}
+
+.card-title {
+  font-family: 'Indie Flower', cursive;
+}
+
+.task-title {
+  font-family: 'Indie Flower', cursive;
 }
 
 .container {
@@ -48,10 +58,10 @@ body {
 }
 
 a {
-    color: #fff;
+    color: #24212e;
 }
 
 .footer {
-  color: #fff;
+  color: #24212e;
   float: right;
 }
