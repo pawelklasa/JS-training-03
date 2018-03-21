@@ -83,43 +83,7 @@
 //   });
 // }
 
-// const form = document.querySelector('#task-form');
-// const taskList = document.querySelector('.collection');
-// const taskContent = document.querySelector('#task');
 
-// runEvents();
-
-// function runEvents() {
-//   form.addEventListener('submit', addTask);
-// }
-
-// function addTask(e) {
-//   if (taskContent.value === '') {
-//     alert('Please add task');
-//   }
-  
-//   const li = document.createElement('li');
-
-//   li.appendChild(document.createTextNode(taskContent.value));
-
-//   li.className = 'collection-item';
-
-//   taskList.appendChild(li);
-
-//   const link = document.createElement('a');
-
-//   link.innerHTML = '<i class="fa fa-times-circle" aria-hidden="true"></i>'
-
-//   li.appendChild(link);
-
-//   link.className = 'delete-item secondary-content';
-
-//   console.log(li); // remove
-
-//   e.preventDefault();
-
-//   taskContent.value = '';
-// }
 
 
 // 1. Select nodes you're working with
@@ -131,7 +95,8 @@
 const form = document.querySelector('.submit-btn'); 
 const task = document.querySelector('#task');
 const listOfTasks = document.querySelector('.collection');
-
+const clearBtn = document.querySelector('.remove-btn');
+const filter = document.querySelector('#filter');
 // Events
 
 runEvents();
@@ -139,6 +104,9 @@ runEvents();
 function runEvents() {
   form.addEventListener('click', addItem);
   listOfTasks.addEventListener('click', removeItem);
+  clearBtn.addEventListener('click', clearTasks);
+  filter.addEventListener('keyup', filterTasks);
+
 }
 
 // Functions
@@ -146,7 +114,7 @@ function runEvents() {
 function addItem(e) {
   if (task.value === '') {
     alert('PLease add task');
-
+    stop;
   }
   
   const li = document.createElement('li');
@@ -175,4 +143,29 @@ function removeItem(e) {
           e.target.parentElement.parentElement.remove();
         }
       }
+}
+
+// Clear tasks
+function clearTasks() {
+  // taskList.innerHTML = '';
+  // Faster
+  while(listOfTasks.firstChild) {
+    listOfTasks.removeChild(listOfTasks.firstChild);
+  }
+
+  // https://jsperf.com/innerhtml-vs-removechild
+}
+
+// Filter tasks
+function filterTasks(e) {
+  const text = e.target.value.toLowerCase();
+  document.querySelectorAll('.collection-item').forEach
+  (function(task) {
+    const item = task.firstChild.textContent;
+    if(item.toLowerCase().indexOf(text) != -1) {
+      task.style.display = 'block';
+    } else {
+      task.style.display = 'none';
+    }
+  });
 }
