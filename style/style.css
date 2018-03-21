@@ -42,6 +42,11 @@ body {
   color: #52e090;
 }
 
+.remove-item {
+  text-align: center;
+  color: #52e090;
+}
+
 a {
     color: #fff;
 }

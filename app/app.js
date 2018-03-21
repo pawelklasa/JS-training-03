@@ -146,6 +146,7 @@ function runEvents() {
 function addItem(e) {
   if (task.value === '') {
     alert('PLease add task');
+
   }
   
   const li = document.createElement('li');
@@ -166,7 +167,6 @@ function addItem(e) {
 
   e.preventDefault();
   task.value = '';
-  console.log(li);
 }
 
 function removeItem(e) {
@@ -175,5 +175,4 @@ function removeItem(e) {
           e.target.parentElement.parentElement.remove();
         }
       }
-  console.log('removed');
 }
